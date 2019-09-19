@@ -1,0 +1,41 @@
+[
+    {
+        "name" : "О BlackBerry Hills",        
+        "attr": {
+            "to": "/",
+            "scroll": "#home-about"
+        }
+    },
+    {
+        "name": "Преимущества",
+        "attr": {
+            "to": "/",
+            "scroll": "#advantage"
+        }
+    },
+    {
+        "name": "Галерея",
+        "attr": {
+            "to": "/gallery"
+        }
+    },
+    {
+        "name": "Планировка",
+        "attr": {
+            "to": "/layout"
+        }
+    },
+    {
+        "name": "Этапы строительства",
+        "attr": {
+            "to": "/stages"
+        }
+    },
+    {
+        "name": "Контакты",
+        "attr": {
+            "to": "",
+            "scroll": "#contact"
+        }
+    }
+]

@@ -1,0 +1,107 @@
+.stages {
+    &__info {        
+        figcaption {            
+            text-align: center;
+            font-size: em(28);
+            position: relative;
+            margin-top: 18px;
+            &:before, &:after {
+              content: '';
+              position: absolute;
+            }
+            p {
+              margin: 0;
+              display: inline-block;
+              position: relative;
+              padding: 0 5px;
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                opacity: 0;
+                transition: opacity .4s;
+                background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(255,255,255, 0) 1%, rgba(255,255,255,1) 51%, rgba(0,0,0,0) 100%);
+                background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(255,255,255, 0) 1%,rgba(255,255,255,1) 51%,rgba(0,0,0,0) 100%);
+                background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255, 0) 1%,rgba(255,255,255,1) 51%,rgba(0,0,0,0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: $maincol;
+                left: 50%;
+                margin-left: -3px;
+                bottom: -12px;
+                opacity: 0;
+                transition: opacity .4s;
+              }
+            }
+            span {
+              position: absolute;
+              display: block;
+              left: 0;
+              right: 0;
+              &:before, &:after {
+                content: '';
+                position: absolute;
+                height: 12px;
+                width: 1px;
+                background-color: $maincol;
+                bottom: -15px;
+              }
+              &:before {
+                transition: left .4s;
+                left: 47%;
+              }
+              &:after {
+                transition: right .4s;
+                right: 47%;
+              }
+            }
+            i {
+              position: absolute;
+              display: block;
+              height: 30px;
+              width: 1px;
+              left: 50%;
+              margin-left: 0px;
+              transition: height .4s 0s;
+              background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(0,0,0,0) 100%);
+            }
+        } 
+        .slick-current {
+            figcaption {
+                i {
+                  height: 65px;
+                  transition-delay: .4s;
+                }
+                p {
+                  &:after {
+                    opacity: 1;
+                    transition-delay: .4s;
+                  }
+                  &:before {
+                    opacity: 1;
+                    transition-delay: .4s;
+                  }
+                }
+                span {
+                  &:before {
+                    transition-delay: .4s;
+                    left: 0;
+                  }
+                  &:after {
+                    transition-delay: .4s;
+                    right: 0;
+                  }
+                }
+              }
+        }           
+    }        
+}

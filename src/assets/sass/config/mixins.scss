@@ -1,0 +1,26 @@
+@mixin sized($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin coverCenter() {
+    background-size: cover;
+    background-position:center;
+}
+
+@mixin flex($jc: flex-start, $ai: flex-start, $direction: row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $direction;
+}
+
+@mixin fonted($font, $lineHeight) {
+    font-size: $font;
+    line-height: $lineHeight
+}
+
+@mixin pseudo() {
+    content: '';
+    position: absolute;
+}

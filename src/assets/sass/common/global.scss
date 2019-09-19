@@ -1,0 +1,62 @@
+html {
+    font-family: $font-stack-helvetica;
+    font-size: 16px;
+}
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    background: $maincol;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;    
+}
+
+ul,li {
+    list-style-type: none;
+}
+
+.main-container, .mob-container, .desk-container {
+    max-width: 100%;    
+}
+
+@media #{$desktop} {
+    .mob {
+        display: none !important;
+    }
+    .main-container, .desk-container {            
+        width: rem(1200); margin: auto;            
+    }       
+}
+
+@media #{$mobile} {
+    html {
+        font-size: 13px;
+    }
+    .desk {
+        display: none !important;
+    }
+    .main-container, .mob-container {        
+        padding: 0 rem(20);
+        text-align: center;
+    }             
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
