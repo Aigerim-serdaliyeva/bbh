@@ -9,6 +9,11 @@ const vueRouter = new VueRouter({
     {
       path: "/",
       name: 'main',
+      component: () => import("./sections/Section.vue")
+    },
+    {
+      path: "/",
+      name: 'main',
       component: () => import("./sections/SectionMain.vue")
     },
     {

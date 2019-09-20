@@ -6,28 +6,16 @@
           <img src="@/assets/images/global/header-logo.svg" alt="">
         </router-link>
         <nav class="main-menu">
-          <div class="container">
-            <ul class="navigation ">
-              <li class="link active">
-                <router-link to="/">О BlackBerry Hills</router-link>
-              </li>
-              <li class="link active">
-                <router-link :to="'/advantage'">Преимущества</router-link>
-              </li>
-              <li class="link active">
-                <router-link :to="'/gallery'">Галерея</router-link>
-              </li>
-              <li class="link active">
-                <router-link :to="'/layout'">Планировка</router-link>
-              </li>
-              <li class="link active">
-                <router-link :to="'/stages'">Этапы строительства</router-link>
-              </li>
-              <li class="link active">
-                <router-link :to="'/contact'">Контакты</router-link>
-              </li>
-            </ul>
-          </div>
+          <ul class="navigation ">
+            <li class="link active"
+              v-for="(item) in menu"
+              :key="item.id"
+            >
+              <router-link to=""
+                @click.native="goTo(item.attr.to, item.attr.scroll)"
+              >{{ item.name }}</router-link>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -36,13 +24,26 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+      menu: require("@/assets/json/menu")
+    }
+  },
+  methods: {
+    goTo(path, scrollTo) {
+      this.$router.push(path);
+      // setTimeout( () => {
+      //   this.$scrollTo(scrollTo)
+      // }, 100)
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
   .header {
     background-color: rgb(57, 7, 31);
+    padding: 20px 0;
     &__content {
       display: flex;
       justify-content: space-between;
@@ -50,7 +51,6 @@ export default {
     }
   }
   .main-menu {  
-    padding: 20px 0;
     ul {
       list-style: none;
       display: flex;
@@ -60,10 +60,7 @@ export default {
     }
 
     li {
-      margin-right: 10px;
-      &:last-child {
-        margin-right: 0;
-      }
+      margin-left: 28px;
 
       &.link a:hover, &.active a {
         color: #fff !important;
@@ -76,7 +73,7 @@ export default {
       color:  #2D2D2D;
       text-decoration: none;
       font-weight: normal;
-      font-size: 18px;
+      font-size: 24px;
       text-align: center;
       &.inverse {
         color: #fff;
